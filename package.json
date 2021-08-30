@@ -1,0 +1,16 @@
+{
+  "name": "aggregator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:thebinod7/aggregator.git",
+  "author": "Binod Chaudhary <thebinod7@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.2"
+  }
+}
