@@ -24,7 +24,7 @@ const app = express();
 app.use(morgan('combined'));
 app.use(
   cors({
-    origin: ALLOWED_ORIGIN,
+    origin: '*',
     exposedHeaders: ['Content-Length', 'X-Foo', 'X-Bar'],
     credentials: true,
   })
