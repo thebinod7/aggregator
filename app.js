@@ -6,7 +6,7 @@ const morgan = require('morgan');
 
 const userApiRoutes = require('./routes/users');
 
-const PORT = config.get('app.port') || 8888;
+const PORT = config.get('app.port') || 9999;
 const ALLOWED_ORIGIN = config.get('app.allowed_origin');
 
 mongoose.connect(config.get('app.db_url'));
