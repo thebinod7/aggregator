@@ -3,13 +3,14 @@ const config = require('config');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
+require('dotenv').config();
 
 const userApiRoutes = require('./routes/users');
 
-const PORT = config.get('app.port') || 9999;
-const ALLOWED_ORIGIN = config.get('app.allowed_origin');
+const PORT = process.env.PORT || 9999;
+const DB_URL = process.env.DB_URL;
 
-mongoose.connect(config.get('app.db_url'));
+mongoose.connect(DB_URL);
 
 mongoose.connection.on('connected', function () {
   console.log('Connected to database successfully.');
