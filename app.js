@@ -5,6 +5,7 @@ const morgan = require('morgan');
 require('dotenv').config();
 
 const userApiRoutes = require('./routes/users');
+const contactAPIRoutes = require('./routes/contacts');
 
 const PORT = process.env.PORT || 9999;
 const DB_URL = process.env.DB_URL;
@@ -31,9 +32,10 @@ app.use(
 );
 app.use(express.json());
 app.use('/api/v1/users', userApiRoutes);
+app.use('/api/v1/contacts', contactAPIRoutes);
 
 app.get('/', (req, res) => {
-  res.json({ success: 'true', message: 'Aggregater server!' });
+  res.json({ success: 'true', message: 'Phonebook server!' });
 });
 
 app.listen(PORT, (err) => {

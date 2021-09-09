@@ -9,7 +9,7 @@ const listUsers = async ({ page, limit, search }) => {
   let query = {};
   let offset = (page - 1) * limit;
 
-  if (search) query = { family_head: { $regex: search, $options: 'i' } };
+  if (search) query = { name: { $regex: search, $options: 'i' } };
 
   let data = await DataUtils.paging({
     offset,
