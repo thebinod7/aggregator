@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const isOnline = require('is-online');
 
 const UserController = require('../controllers/user.controller');
 
@@ -11,6 +12,12 @@ router.get('/', (req, res) => {
     .catch((e) => {
       res.json(e);
     });
+});
+
+router.get('/check-internet', async (req, res) => {
+  const online = await isOnline();
+  console.log({ online });
+  res.json({ online });
 });
 
 router.post('/', (req, res) => {
